@@ -27,6 +27,7 @@ class Server
         $this->thread = new GameThread($this);
         $this->thread->start();
         Server::getInstance()->getLogger()->notice("GameThread was started");
+        
     }
 
     /**
