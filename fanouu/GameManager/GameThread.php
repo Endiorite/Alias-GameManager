@@ -4,9 +4,14 @@ namespace fanouu\GameManager;
 
 use Alias\packets\AcceptRequestConnection;
 use fanouu\GameManager\packets\handlers\PacketHandler;
+use fanouu\GameManager\packets\handlers\RemoveMatchHandler;
+use fanouu\GameManager\packets\handlers\RequestMatchMakingHandler;
+use fanouu\GameManager\packets\handlers\RequestPlayerStatusHandler;
+use fanouu\GameManager\packets\handlers\UpdatePlayerStatusHandler;
 use fanouu\GameManager\packets\Packet;
 use fanouu\GameManager\packets\PacketId;
 use fanouu\GameManager\packets\ServerRequestConnection;
+use fanouu\GameManager\packets\TransferPlayerQueue;
 use fanouu\GameManager\servers\GameServer;
 use fanouu\GameManager\servers\ServerManager;
 
@@ -92,7 +97,13 @@ class GameThread extends \Thread
      */
     public function getHandlers(): array
     {
-
+        return [
+            new RequestPlayerStatusHandler(),
+            new UpdatePlayerStatusHandler(),
+            new RemoveMatchHandler(),
+            new TransferPlayerQueue(),
+            new RequestMatchMakingHandler()
+        ];
     }
 
 }

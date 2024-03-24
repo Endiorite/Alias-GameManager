@@ -9,9 +9,12 @@ class ServerRequestConnection extends Packet
 
     public string $server_name = "default_server";
 
+    /**
+     * @throws \Exception
+     */
     public function decodePayload(): void
     {
-        // TODO: Implement decodePayload() method.
+        $this->server_name = $this->getString();
     }
 
     public function encodePayload(): void

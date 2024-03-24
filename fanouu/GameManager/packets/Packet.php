@@ -22,12 +22,12 @@ class Packet extends Buffer
         $this->packet_id = $this->getByte();
     }
 
-    public function decode(): void{
+    final public function decode(): void{
         $this->decodeHeader();
         $this->decodePayload();
     }
 
-    public function encode(): void{
+final public function encode(): void{
         $this->encodeHeader();
         $this->encodePayload();
     }

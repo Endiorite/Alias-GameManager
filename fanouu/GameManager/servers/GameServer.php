@@ -10,6 +10,7 @@ class GameServer
 
     private $last_sent_packet;
     private $last_receive_packet;
+    private int $playersCount = 0;
 
     public function __construct(
         private readonly string $name,
@@ -60,6 +61,22 @@ class GameServer
 
     public function sendPacket(Packet $packet): void{
         Server::getInstance()->getThread()->sendTo($packet, $this);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlayersCount(): int
+    {
+        return $this->playersCount;
+    }
+
+    /**
+     * @param int $playersCount
+     */
+    public function setPlayersCount(int $playersCount): void
+    {
+        $this->playersCount = $playersCount;
     }
 
 }

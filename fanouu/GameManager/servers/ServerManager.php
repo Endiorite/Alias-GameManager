@@ -56,4 +56,20 @@ class ServerManager
 
         return $this->searchByAdress[$addressStr] ?? null;
     }
+
+    public function getOptimalServer(): ?GameServer{
+        $server = null;
+        foreach ($this->servers as $gameServer){
+            if (is_null($server)){
+                $server = $gameServer;
+                continue;
+            }
+
+            if ($server->getPlayersCount() > $gameServer->getPlayersCount()){
+                $server = $gameServer;
+            }
+        }
+
+        return $server;
+    }
 }

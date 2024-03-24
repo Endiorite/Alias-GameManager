@@ -2,7 +2,10 @@
 
 namespace fanouu\GameManager;
 
+use fanouu\GameManager\matchmaking\MatchMakingManager;
+use fanouu\GameManager\matchmaking\MatchMakingThread;
 use fanouu\GameManager\players\PlayerManager;
+use fanouu\GameManager\servers\ServerManager;
 use fanouu\GameManager\utils\Logger;
 use fanouu\GameManager\utils\SingletonTrait;
 
@@ -11,8 +14,11 @@ class Server
     use SingletonTrait;
 
     private GameThread|null $thread = null;
+    private ?MatchMakingThread $makingThread = null;
     private ?PlayerManager $playerManager = null;
     private ?Logger $logger = null;
+    private ?MatchMakingManager $makingManager = null;
+    private ?ServerManager $serverManager = null;
 
     public const WHITELIST = [
         "address:port"
@@ -23,10 +29,18 @@ class Server
         $this->logger = new Logger("GameManager");
         $this->logger->info("Initing PlayerManager");
         $this->playerManager = new PlayerManager();
+        $this->logger->info("Initing MatchMakingManager");
+        $this->makingManager = new MatchMakingManager();
+        $this->logger->info("Initing ServerManager");
+        $this->serverManager = new ServerManager();
         $this->logger->info("Initing GameThread");
         $this->thread = new GameThread($this);
         $this->thread->start();
+        $this->logger->info("Initing MatchMakingThread");
+        $this->makingThread = new MatchMakingThread($this, $this->makingManager);
+        $this->makingThread->start();
         Server::getInstance()->getLogger()->notice("GameThread was started");
+
     }
 
     /**
