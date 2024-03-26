@@ -15,7 +15,7 @@ use fanouu\GameManager\packets\TransferPlayerQueue;
 use fanouu\GameManager\servers\GameServer;
 use fanouu\GameManager\servers\ServerManager;
 
-class GameThread extends \Thread
+class GameSocket
 {
 
     private Server $server;
@@ -30,14 +30,16 @@ class GameThread extends \Thread
         socket_set_option($this->socket, SOL_SOCKET, SO_SNDBUF, 1024 * 1024 * 8);
         socket_set_option($this->socket, SOL_SOCKET, SO_RCVBUF, 1024 * 1024 * 8);
         Server::getInstance()->getLogger()->notice("Socket is ready");
-        Server::getInstance()->getLogger()->notice("GameThread is ready");
+        Server::getInstance()->getLogger()->notice("GameSocket is ready");
+
+        $this->run();
     }
 
     public function run()
     {
         socket_bind($this->socket, "", 2323);
 
-        while ($this->isRunning()){
+        while (true){
             $data = b'';
             $error = @socket_recvfrom($this->socket, $data, 65535, 0, $address, $port);
 
@@ -64,7 +66,7 @@ class GameThread extends \Thread
                         $server->sendPacket($pk);
 
                         $this->server->getLogger()->warning("$addressStr | $serverName connection accepted");
-                    }else $this->server->getLogger()->warning("$addressStr | $server not in whitelist");
+                    }else $this->server->getLogger()->warning("$addressStr | $serverName not in whitelist");
                 }
 
                 $server = ServerManager::getInstance()->getServerByAddress($address, $port);
@@ -82,6 +84,8 @@ class GameThread extends \Thread
                     }
                 }
             }
+
+            $this->server->getMakingManager()->updateMatch();
         }
     }
 

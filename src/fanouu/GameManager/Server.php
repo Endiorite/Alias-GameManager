@@ -2,10 +2,7 @@
 
 namespace fanouu\GameManager;
 
-require __DIR__ . '/vendor/autoload.php';
-
 use fanouu\GameManager\matchmaking\MatchMakingManager;
-use fanouu\GameManager\matchmaking\MatchMakingThread;
 use fanouu\GameManager\players\PlayerManager;
 use fanouu\GameManager\servers\ServerManager;
 use fanouu\GameManager\utils\Logger;
@@ -15,8 +12,7 @@ class Server
 {
     use SingletonTrait;
 
-    private ?GameThread $thread = null;
-    private ?MatchMakingThread $makingThread = null;
+    private ?GameSocket $socket = null;
     private ?PlayerManager $playerManager = null;
     private ?Logger $logger = null;
     private ?MatchMakingManager $makingManager = null;
@@ -36,13 +32,9 @@ class Server
         $this->makingManager = new MatchMakingManager();
         $this->logger->info("Initing ServerManager");
         $this->serverManager = new ServerManager();
-        $this->logger->info("Initing GameThread");
-        $this->thread = new GameThread($this);
-        $this->thread->start();
-        $this->logger->info("Initing MatchMakingThread");
-        $this->makingThread = new MatchMakingThread($this, $this->makingManager);
-        $this->makingThread->start();
-        Server::getInstance()->getLogger()->notice("GameThread was started");
+        $this->logger->info("Initing GameSocket");
+        $this->socket = new GameSocket($this);
+        Server::getInstance()->getLogger()->notice("GameSocket was started");
 
     }
 
@@ -55,11 +47,11 @@ class Server
     }
 
     /**
-     * @return GameThread|null
+     * @return GameSocket|null
      */
-    public function getThread(): ?GameThread
+    public function getSocket(): ?GameSocket
     {
-        return $this->thread;
+        return $this->socket;
     }
 
     /**
@@ -68,6 +60,14 @@ class Server
     public function getLogger(): ?Logger
     {
         return $this->logger;
+    }
+
+    /**
+     * @return MatchMakingManager|null
+     */
+    public function getMakingManager(): ?MatchMakingManager
+    {
+        return $this->makingManager;
     }
 
 }

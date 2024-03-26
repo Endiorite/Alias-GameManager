@@ -60,7 +60,7 @@ class GameServer
     }
 
     public function sendPacket(Packet $packet): void{
-        Server::getInstance()->getThread()->sendTo($packet, $this);
+        Server::getInstance()->getSocket()->sendTo($packet, $this);
     }
 
     /**
