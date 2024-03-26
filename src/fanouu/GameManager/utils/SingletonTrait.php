@@ -7,13 +7,12 @@ trait SingletonTrait
     /** @var self|null */
     private static $instance = null;
 
-    private static function make() : self{
-        return new self();
-    }
-
+    /**
+     * @throws \Exception
+     */
     public static function getInstance() : self{
         if(self::$instance === null){
-            self::$instance = self::make();
+            throw new \Exception("set instance in class construct");
         }
         return self::$instance;
     }

@@ -6,7 +6,7 @@ class Logger
 {
 
     public function __construct(
-        private string $prefix
+        private readonly string $prefix
     )
     {
     }

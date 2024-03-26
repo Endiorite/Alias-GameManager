@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0414234-58bc-4a0e-9944-4d76f816409f" name="Changes" comment="Allez on continue">
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/MatchMakingManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/MatchMakingThread.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/PlayerMatchInfo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/QueueMatch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/rules/DefaultMatchRules.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/matchmaking/rules/MatchRules.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/InitQueue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/RemoveMatch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/RequestMatchMaking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/TransferPlayerQueue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/RemoveMatchHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/RequestMatchMakingHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/TransferPlayerQueueHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/UpdatePlayerStatusHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/utils/GameInfo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fanouu/GameManager/utils/UuidGenerator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/GameThread.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/GameThread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/Server.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/Server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/Packet.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/Packet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/PacketId.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/PacketId.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/ServerRequestConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/ServerRequestConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/UpdatePlayerStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/UpdatePlayerStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/PacketHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/PacketHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/PacketHandlerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/PacketHandlerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/RequestPlayerStatusHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/packets/handlers/RequestPlayerStatusHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/players/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/players/Player.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/servers/GameServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/servers/GameServer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanouu/GameManager/servers/ServerManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/fanouu/GameManager/servers/ServerManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +56,8 @@
       <workItem from="1710800789127" duration="986000" />
       <workItem from="1711058736899" duration="954000" />
       <workItem from="1711286487820" duration="11617000" />
-      <workItem from="1711312962249" duration="425000" />
+      <workItem from="1711312962249" duration="605000" />
+      <workItem from="1711315488881" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="Upload">
       <created>1710801106037</created>
@@ -93,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710801106038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Allez on continue">
+      <created>1711313444322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711313444322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

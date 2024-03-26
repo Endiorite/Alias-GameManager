@@ -9,11 +9,11 @@ class PlayerManager
 {
     use SingletonTrait;
 
-    private $players = [];
+    private array $players = [];
 
     public function __construct()
     {
-        self::setInstance($this);
+        //self::setInstance($this);
         Server::getInstance()->getLogger()->notice("PlayerManager is ready");
     }
 

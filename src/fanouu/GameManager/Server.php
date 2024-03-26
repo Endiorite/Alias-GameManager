@@ -2,6 +2,8 @@
 
 namespace fanouu\GameManager;
 
+require __DIR__ . '/vendor/autoload.php';
+
 use fanouu\GameManager\matchmaking\MatchMakingManager;
 use fanouu\GameManager\matchmaking\MatchMakingThread;
 use fanouu\GameManager\players\PlayerManager;
@@ -13,7 +15,7 @@ class Server
 {
     use SingletonTrait;
 
-    private GameThread|null $thread = null;
+    private ?GameThread $thread = null;
     private ?MatchMakingThread $makingThread = null;
     private ?PlayerManager $playerManager = null;
     private ?Logger $logger = null;
@@ -26,6 +28,7 @@ class Server
 
     public function __construct()
     {
+        self::setInstance($this);
         $this->logger = new Logger("GameManager");
         $this->logger->info("Initing PlayerManager");
         $this->playerManager = new PlayerManager();
