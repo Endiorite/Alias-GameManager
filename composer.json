@@ -1,0 +1,16 @@
+{
+    "name": "fanouu/alias-game-manager",
+    "description": "Game Manager for Alias Games",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Fanouu"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "fanouu\\": "src/fanouu"
+        }
+    }
+}
